@@ -19,11 +19,14 @@
 
 .flex-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: red;
     border: 5px salmon;
     border-style: dashed;
-    flex: 1 1 0%;
+    max-width: auto;
+    gap: 1rem;
+    justify-content: center;
+    
 }
 
 .flex-container {
@@ -31,21 +34,60 @@
     background: lightblue;
     border: 5px blue;
     border-style: groove;
-    flex: 1 1 0%;
-    padding: 1em;
-    gap: 2rem;
-
-
+    gap: 1rem;
+    flex: 0 0 0;
+    
 }
 
+@media (max-width: 1100px) {
+    .flex-content {
+        flex-direction: column;
+    }
+}
+
+.nav {
+    text-align: center;
+    height: fit-content;
+}
 /* Can also use .flex-container div to for the same effect
     (the below combinator'> *' points to all children of the .flex-container selector  */
-
-.flex-container > * {
+    
+.flex-container div {
     background: peachpuff;
     border: 4px solid brown;
-    height: 50px;
-    width: 0px;
+    height: 40px;
+    width: 100px;
+    flex: 1 1 auto;
+}
+
+.Topics {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+
+    
+}
+
+.Topic {
+    margin-top: 30px;
+    border: 5px;
+    border-color:salmon;
+    border-style: dashed;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    max-width: 750px;
     flex: 1 1 0;
-    flex-wrap: wrap;
+    list-style: none;
+}
+
+.Title {
+    text-align: center;
+}
+
+.Topic li {
+    padding-bottom: 5px;
+    padding-left: 15px;
+    
 }
